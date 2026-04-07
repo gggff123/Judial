@@ -17,16 +17,16 @@ if not os.path.exists(file):
 else:
     print("Model loaded")
     
-    #Imports 
-    from rich.console import Console
-    from rich.panel import Panel
-    from rich.spinner import Spinner
-    from rich.prompt import Prompt
-    from llm import chat
-    #init console
-    console=Console()
-    # cli banner
-    banner=r"""
+#Imports 
+from rich.console import Console
+from rich.panel import Panel
+from rich.spinner import Spinner
+from rich.prompt import Prompt
+from llm import chat
+#init console
+console=Console()
+# cli banner
+banner=r"""
         █████                █████  ███            ████ 
         ░░███                ░░███  ░░░            ░░███ 
         ░███  █████ ████  ███████  ████   ██████   ░███ 
@@ -37,10 +37,11 @@ else:
     ░░░░░░░░     ░░░░░░░░  ░░░░░░░░ ░░░░░  ░░░░░░░░ ░░░░░ 
                                                                                                             
     """
-    console.print(banner)
+console.print(banner)
     #welcome message
-    console.print(Panel('Hello Welcome to judial , Enter input to get started'),style='white on blue')
-    while True:
+console.print(Panel('Hello Welcome to judial , Enter input to get started type /quit or /exit to exit'),style='white on blue')
+
+while True:
         user_input = Prompt.ask("> ")
         if user_input == '/quit' or user_input == '/exit':
             console.print('[green]Exited Successfully')
