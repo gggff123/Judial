@@ -1,5 +1,3 @@
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 uv --version
 uv venv
-uv pip install -r requirements.txt
-python start_server.py
