@@ -9,7 +9,7 @@ _llm = Llama(
     verbose=False
 )
 
-def chat(user_input,temperature=0.7, top_p=0.9):
+def chat(user_input,max_tokens=500,temperature=0.7, top_p=0.9):
     prompt = f"""<|start_header_id|>system<|end_header_id|>
 You are a helpful AI assistant.
 <|eot_id|><|start_header_id|>user<|end_header_id|>
@@ -19,6 +19,7 @@ You are a helpful AI assistant.
 
     output = _llm(
         prompt,
+        max_tokens=max_tokens,
         temperature=temperature,
         top_p=top_p,
         stop=["<|eot_id|>"]
